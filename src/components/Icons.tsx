@@ -69,7 +69,7 @@ export const IconInfo = ({}) => (
   </svg>
 );
 
-export const IconPlus = ({ classNameCustom='' }) => (
+export const IconPlus = ({ classNameCustom = "" }) => (
   <svg
     className={classNameCustom}
     width="16"
@@ -136,7 +136,7 @@ export const IconHamburger = ({}) => (
 export const IconFlag = () => (
   <div>
     <svg
-      width="11"
+      width="17"
       height="14"
       viewBox="0 0 11 14"
       fill="none"
@@ -216,7 +216,7 @@ export const IconDelete = () => (
       width="17"
       height="17"
       viewBox="0 0 17 17"
-      fill="none"
+      // fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

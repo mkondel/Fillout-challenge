@@ -6,9 +6,8 @@ function App() {
   const addPage = () => alert("User clicked to add a page");
 
   return (
-    <main className="flex flex-col gap-8 px-4 py-16 max-w-[1280px] mx-auto">
-      <div className="flex items-center justify-center">
-        helloooo
+    <main className="flex flex-col gap-8 max-w-[1280px] mx-auto h-screen relative">
+      <div className="px-4 py-16 flex items-center justify-center absolute bottom-0 left-[50%] right-[50%]">
         <Button text="Info" Icon={IconInfo} />
         <Dashes onClickPlus={addPage} />
         <Button text="Details" Icon={IconPage} />
