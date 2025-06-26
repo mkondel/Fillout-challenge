@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .btn {
-  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-1.5 h-8 rounded-lg flex-none font-inter font-medium text-sm text-center tracking-tight w-fit;
+  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-1.5 h-8 rounded-lg flex-none font-inter font-medium text-sm text-center tracking-tight w-fit cursor-pointer;
 }
 
 .active-border-shadow {
@@ -20,10 +20,14 @@
   @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-2 relative bg-white rounded-lg;
 }
 
+.btn--white {
+  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-2 text-gray-500 bg-white hover:bg-[#dddfe4] hover:shadow-none focus:bg-white focus:text-black focus:!border-[0.5px] focus:border-[#2f72e2] focus:shadow-[0px_0px_0px_1.5px_rgba(47,114,226,0.25),0px_1px_1px_rgba(0,0,0,0.02),0px_1px_3px_rgba(0,0,0,0.04)] active:bg-white active:border-[0.5px] active:border-[#E1E1E1] active:shadow-[0px_1px_1px_rgba(0,0,0,0.02),0px_1px_3px_rgba(0,0,0,0.04)] rounded-lg;
+}
+
 .btn--complete {
   @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-2 text-gray-500 bg-[#f1f2f4] hover:bg-[#dddfe4] hover:shadow-none focus:bg-white focus:text-black focus:!border-[0.5px] focus:border-[#2f72e2] focus:shadow-[0px_0px_0px_1.5px_rgba(47,114,226,0.25),0px_1px_1px_rgba(0,0,0,0.02),0px_1px_3px_rgba(0,0,0,0.04)] active:bg-white active:border-[0.5px] active:border-[#E1E1E1] active:shadow-[0px_1px_1px_rgba(0,0,0,0.02),0px_1px_3px_rgba(0,0,0,0.04)] rounded-lg;
 }
 
-.btn--active {
+.btn--unchanging {
   @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-2 text-black bg-white border-[0.5px] border-[#E1E1E1] shadow-[0px_1px_1px_rgba(0,0,0,0.02),0px_1px_3px_rgba(0,0,0,0.04)] rounded-lg;
 }
