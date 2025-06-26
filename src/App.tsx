@@ -8,7 +8,8 @@ function App() {
       <h1 className="text-4xl font-bold">Hello React & Tailwind!</h1>
       <div className="flex flex-row items-center gap-6">
         <button
-          className="bg-sky-300 px-3 py-2 rounded hover:bg-sky-400"
+          // className="bg-sky-300 px-3 py-2 rounded hover:bg-sky-400"
+          className="default_button"
           onClick={() => setCount(count + 1)}
         >
           Count: {count}

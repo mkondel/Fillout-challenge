@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Default */
+.default_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 10px;
+  gap: 8px;
+
+  position: relative;
+  width: 84px;
+  height: 32px;
+  left: 31px;
+  top: 136px;
+
+  background: rgba(157, 164, 178, 0.15);
+  border-radius: 8px;
+}
