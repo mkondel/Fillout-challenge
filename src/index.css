@@ -8,147 +8,22 @@
   @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-1.5 h-8 rounded-lg flex-none font-inter font-medium text-sm text-center tracking-tight w-fit;
 }
 
-.btn--bg--default {
-  @apply bg-[#9DA4B20F];
+.active-border-shadow {
+  @apply shadow-sm shadow-[#E1E1E1] border border-[#E1E1E180];
 }
 
-.btn--bg--hover {
-  @apply bg-[#9DA4B223];
-}
-
-.btn--focused {
-  @apply bg-white border border-gray-200 shadow-sm text-gray-900;
-}
-
-.btn--default {
-  @apply btn--bg--default bg-opacity-15 border-none text-gray-500;
-}
-
-.btn--hover {
-  @apply btn--bg--hover bg-opacity-15 border-none text-gray-500;
+.btn--active {
+  @apply bg-white text-gray-900 active-border-shadow;
 }
 
 .btn--focused {
-  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-2 relative bg-white shadow-md rounded-lg;
+  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-2 relative bg-white rounded-lg;
 }
 
-.icon {
-  @apply w-5 h-5 flex-none relative;
+.btn--complete {
+  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-2 text-gray-500 bg-[#f1f2f4] hover:bg-[#dddfe4] hover:shadow-none focus:bg-white focus:text-black focus:!border-[0.5px] focus:border-[#2f72e2] focus:shadow-[0px_0px_0px_1.5px_rgba(47,114,226,0.25),0px_1px_1px_rgba(0,0,0,0.02),0px_1px_3px_rgba(0,0,0,0.04)] active:bg-white active:border-[0.5px] active:border-[#E1E1E1] active:shadow-[0px_1px_1px_rgba(0,0,0,0.02),0px_1px_3px_rgba(0,0,0,0.04)] rounded-lg;
 }
 
-.icon--small {
-  @apply w-4 h-4;
-}
-
-.icon--tiny {
-  @apply w-2 h-2;
-}
-
-.icon__circle-info::before {
-  @apply content-[''] absolute inset-[11.46%] border-[1.5px] border-orange-400 rounded-full;
-}
-
-.icon__circle-info::after {
-  @apply content-[''] absolute left-[47.92%] right-[47.92%] top-[31.25%] bottom-[64.58%] bg-orange-400 border-[0.25px] border-orange-400;
-}
-
-.icon__file-text::before {
-  @apply content-[''] absolute left-[19.79%] right-[19.79%] top-[11.46%] bottom-[11.46%] border-[1.5px] border-gray-400 rounded-sm;
-}
-
-.icon__file-text::after {
-  @apply content-[''] absolute left-[36.46%] right-[36.46%] top-[55.21%] bottom-[28.12%] border-[1.5px] border-gray-400;
-}
-
-.icon__plus::before {
-  @apply content-[''] absolute left-[14.58%] right-[14.58%] top-[14.58%] bottom-[14.58%] border border-black;
-}
-
-.icon__circle-check::before {
-  @apply content-[''] absolute inset-[11.46%] border-[1.5px] border-gray-400 rounded-full;
-}
-
-.divider {
-  @apply box-border w-5 h-[1.5px] border border-dashed border-gray-300 flex-none;
-}
-
-/* Main Container */
-.workflow-container {
-  @apply box-border flex flex-col items-start p-5 gap-3 relative w-[1140px] h-[72px] left-[50px] top-[50px] bg-gray-50 border-t-[0.5px] border-gray-200 shadow-sm;
-}
-
-.workflow-steps {
-  @apply flex flex-row justify-between items-start p-0 gap-3 isolate w-[1100px] h-8 rounded-xl flex-none self-stretch;
-}
-
-.workflow-steps__inner {
-  @apply flex flex-row items-center p-0 mx-auto w-[560.5px] h-8 flex-none z-10;
-}
-
-.step-info {
-  @apply w-[71px] gap-2;
-}
-
-.step-info__content {
-  @apply flex flex-row items-center p-0 gap-1.5 w-[51px] h-5 flex-none;
-}
-
-.step-info__text {
-  @apply w-[25px] h-5 flex-none;
-}
-
-.step-details {
-  @apply w-[91px] gap-1.5;
-}
-
-.step-details__text {
-  @apply w-[45px] h-5 flex-none;
-}
-
-.step-add {
-  @apply w-4 h-4 gap-2;
-}
-
-.step-other {
-  @apply w-[84px] gap-2;
-}
-
-.step-other__content {
-  @apply flex flex-row items-center p-0 gap-1.5 w-16 h-5 flex-none;
-}
-
-.step-other__text {
-  @apply w-[38px] h-5 flex-none;
-}
-
-.step-ending {
-  @apply w-[92px] gap-1.5;
-}
-
-.step-ending__text {
-  @apply w-[46px] h-5 flex-none;
-}
-
-.add-page-btn {
-  @apply w-[106.5px] gap-1.5;
-}
-
-.add-page-btn__icon {
-  @apply w-4 h-4 flex-none;
-}
-
-.add-page-btn__icon::before {
-  @apply content-[''] absolute inset-[15%] bg-gray-900;
-}
-
-.add-page-btn__container {
-  @apply w-[64.5px] h-4 flex-none;
-}
-
-.add-page-btn__text {
-  @apply absolute w-[63px] h-5 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
-}
-
-.bottom-element {
-  @apply mx-auto w-[109px] h-[15px] flex-none z-0;
+.btn--active {
+  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-2 text-black bg-white border-[0.5px] border-[#E1E1E1] shadow-[0px_1px_1px_rgba(0,0,0,0.02),0px_1px_3px_rgba(0,0,0,0.04)] rounded-lg;
 }
