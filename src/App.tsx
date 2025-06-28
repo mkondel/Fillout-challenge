@@ -13,6 +13,7 @@ interface ItemType {
 }
 
 function App() {
+  // default toolbar that a user sees on page load
   const [pagesList, setPagesList] = useState<ItemType[]>([
     { id: 1, title: "Info", icon: "info" },
     { id: 2, title: "Details", icon: "page" },
@@ -20,6 +21,7 @@ function App() {
     { id: 4, title: "Ending", icon: "check" },
   ]);
 
+  // creates a new page and inserts it into state
   const addPage = (index: number) => {
     // alert(`User clicked to add a page after ${pagesList[index].title}`);
     const newPageTitle = prompt("New page title?") || "New Page";
@@ -35,25 +37,27 @@ function App() {
     });
   };
 
+  // handles CTRL-C events
   const exportPagesList = async () => {
     const jsonState = JSON.stringify([...pagesList]);
-    console.log(jsonState);
     const base64State = btoa(jsonState);
     await navigator.clipboard.writeText(base64State);
   };
 
+  // handles CTRL-V events
   const importPagesList = async () => {
     const base64State = await navigator.clipboard.readText();
     const jsonState = JSON.parse(atob(base64State));
-    console.log(jsonState);
     setPagesList(jsonState);
   };
 
+  // hooks to call export/import functions on hotkey events
   useHotkeys("ctrl+c", exportPagesList);
   useHotkeys("ctrl+v", importPagesList);
 
   return (
     <main className="flex flex-col max-w-[1280px] mx-auto h-screen relative w-full">
+      {/* center card with some info */}
       <div className="p-4 flex flex-col items-center justify-end w-full h-2/3">
         <div className="w-fit h-fit bg-gray-100 text-gray-900 font-light text-3xl text-center rounded-xl flex flex-col items-center border p-8 cursor-default">
           <div className="size-48">
@@ -66,6 +70,8 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* the toolbar */}
       <div className="p-4 flex items-center justify-center w-full h-1/3">
         <ReactSortable
           className="flex w-auto"
@@ -126,6 +132,7 @@ function App() {
           ))}
         </ReactSortable>
 
+        {/* the final button is always Add Page */}
         <button
           onClick={() => addPage(pagesList.length - 1)}
           className="btn btn--unchanging !cursor-pointer"

@@ -1,5 +1,6 @@
 import { IconPlus } from "./Icons";
 
+// The dashes that connect each page button on the screen. Handles displaying the add page buttons when a user hovers mouse over the dashes.
 const Dashes = ({ showPlus = true, onClickPlus = () => {} }) => {
   return (
     <div className="w-fit h-full text-gray-500/50 font-bold flex justify-center items-center group relative">

@@ -13,6 +13,7 @@ const Button = ({
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // controls showing/hiding the context menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };

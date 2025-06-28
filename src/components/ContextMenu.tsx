@@ -6,6 +6,7 @@ import {
   IconDuplicate,
 } from "./Icons";
 
+// a context menu that gets displayed when a user clicks the hamburder icon on a given page button
 const ContextMenu = ({
   onRename = () => {},
   onFirst = () => {},

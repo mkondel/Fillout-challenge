@@ -1,5 +1,6 @@
 import { IconCheck, IconInfo, IconPage, IconPlus } from "./Icons";
 
+// A HOC component to display various icons.
 const MegaIcon = ({ icon }: { icon: string }) => {
   switch (icon) {
     default:
