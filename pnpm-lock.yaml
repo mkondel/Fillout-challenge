@@ -11,6 +11,9 @@ dependencies:
   react-dom:
     specifier: ^19.0.0
     version: 19.1.0(react@19.1.0)
+  react-hotkeys-hook:
+    specifier: ^5.1.0
+    version: 5.1.0(react-dom@19.1.0)(react@19.1.0)
   react-sortablejs:
     specifier: 6.1.4
     version: 6.1.4(@types/sortablejs@1.15.8)(react-dom@19.1.0)(react@19.1.0)(sortablejs@1.15.6)
@@ -2002,6 +2005,16 @@ packages:
     dependencies:
       react: 19.1.0
       scheduler: 0.26.0
+    dev: false
+
+  /react-hotkeys-hook@5.1.0(react-dom@19.1.0)(react@19.1.0):
+    resolution: {integrity: sha512-GCNGXjBzV9buOS3REoQFmSmE4WTvBhYQ0YrAeeMZI83bhXg3dRWsLHXDutcVDdEjwJqJCxk5iewWYX5LtFUd7g==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
     dev: false
 
   /react-refresh@0.17.0:
