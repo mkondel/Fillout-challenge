@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .btn {
-  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-1.5 h-8 rounded-lg flex-none font-inter font-medium text-sm text-center tracking-tight w-fit cursor-pointer whitespace-nowrap;
+  @apply box-border flex flex-row justify-center items-center px-2.5 py-1 gap-1.5 h-8 rounded-lg flex-none font-inter font-medium text-sm text-center tracking-tight w-fit cursor-grab whitespace-nowrap;
 }
 
 .active-border-shadow {
