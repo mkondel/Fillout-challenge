@@ -2,7 +2,7 @@ import { IconPlus } from "./Icons";
 
 const Dashes = ({ showPlus = true, onClickPlus = () => {} }) => {
   return (
-    <div className="w-fit text-gray-500/50 font-bold flex justify-center items-center group relative">
+    <div className="w-fit h-full text-gray-500/50 font-bold flex justify-center items-center group relative">
       {showPlus && (
         <div
           onClick={onClickPlus}
@@ -13,7 +13,7 @@ const Dashes = ({ showPlus = true, onClickPlus = () => {} }) => {
       )}
       <div
         className={`-mx-5 ${
-          showPlus && "transform duration-300 group-hover:m-0"
+          showPlus && "transform duration-300 group-hover:-m-2"
         } -z-[1] relative -top-0.5`}
       >
         ----------

@@ -2,7 +2,7 @@ import { useState, FC } from "react";
 import { IconCheck, IconInfo, IconPage, IconPlus } from "./components/Icons";
 import Dashes from "./components/Dashes";
 import Button from "./components/Button";
-import { ReactSortable } from "react-sortablejs";
+import { ReactSortable, Sortable } from "react-sortablejs";
 
 interface ItemType {
   id: number;
@@ -29,14 +29,53 @@ function App() {
           className="flex w-auto"
           list={pagesList}
           setList={setPagesList}
-          animation={100}
-          easing="ease-out"
-          // forceFallback={true}
-          // fallbackOnBody={true}
+          animation={200}
         >
-          {pagesList.map(({ id, title, Icon, chosen }, index) => (
+          {pagesList.map(({ id, title, Icon }, index) => (
             <div key={id} className="stroke-black flex items-center">
-              <Button title={title} Icon={() => <Icon />} />
+              <Button
+                title={title}
+                Icon={() => <Icon />}
+                onFirst={() =>
+                  setPagesList((currPagesList) => {
+                    const listCopy = [...currPagesList];
+                    const new1st = listCopy.splice(index, 1)[0];
+                    const newList = [new1st, ...listCopy];
+                    return newList;
+                  })
+                }
+                onRename={() => {
+                  const newTitle = prompt("New page title?") || "";
+                  setPagesList((currPagesList) =>
+                    currPagesList.map((page, idx) => {
+                      if (idx !== index) return page;
+                      else return { ...page, title: newTitle };
+                    })
+                  );
+                }}
+                onCopy={async () => {
+                  await navigator.clipboard.writeText(pagesList[index].title);
+                  alert(`Copied "${pagesList[index].title}" to clipboard`);
+                }}
+                onDuplicate={() =>
+                  setPagesList((currPagesList) => {
+                    const listCopy = [...currPagesList];
+                    const copiedPage = {
+                      ...listCopy[index],
+                      id: Math.random(),
+                    };
+                    listCopy.splice(index, 0, copiedPage);
+                    return listCopy;
+                  })
+                }
+                onDelete={() =>
+                  setPagesList((currPagesList) => {
+                    const listCopy = [...currPagesList];
+                    listCopy.splice(index, 1);
+                    return listCopy;
+                  })
+                }
+              />
               <Dashes
                 onClickPlus={addPage}
                 showPlus={index < pagesList.length - 1}
