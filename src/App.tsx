@@ -8,19 +8,30 @@ interface ItemType {
   id: number;
   title: string;
   Icon: FC;
-  chosen: boolean;
-  selected: boolean;
 }
 
 function App() {
   const [pagesList, setPagesList] = useState<ItemType[]>([
-    { id: 1, title: "Info", Icon: IconInfo, chosen: false, selected: false },
-    { id: 2, title: "Details", Icon: IconPage, chosen: false, selected: false },
-    { id: 3, title: "Other", Icon: IconPage, chosen: false, selected: false },
-    { id: 4, title: "Ending", Icon: IconCheck, chosen: false, selected: false },
+    { id: 1, title: "Info", Icon: IconInfo },
+    { id: 2, title: "Details", Icon: IconPage },
+    { id: 3, title: "Other", Icon: IconPage },
+    { id: 4, title: "Ending", Icon: IconCheck },
   ]);
 
-  const addPage = () => alert("User clicked to add a page");
+  const addPage = (index: number) => {
+    // alert(`User clicked to add a page after ${pagesList[index].title}`);
+    const newPageTitle = prompt("New page title?") || "New Page";
+    setPagesList((currPagesList) => {
+      const listCopy = [...currPagesList];
+      const newPage = {
+        id: Math.random(),
+        title: newPageTitle,
+        Icon: IconPage,
+      };
+      listCopy.splice(index + 1, 0, newPage);
+      return listCopy;
+    });
+  };
 
   return (
     <main className="flex flex-col max-w-[1280px] mx-auto h-screen relative w-full">
@@ -77,14 +88,17 @@ function App() {
                 }
               />
               <Dashes
-                onClickPlus={addPage}
+                onClickPlus={() => addPage(index)}
                 showPlus={index < pagesList.length - 1}
               />
             </div>
           ))}
         </ReactSortable>
 
-        <button onClick={addPage} className="btn btn--unchanging">
+        <button
+          onClick={() => addPage(pagesList.length - 1)}
+          className="btn btn--unchanging"
+        >
           <IconPlus />
           Add page
         </button>
